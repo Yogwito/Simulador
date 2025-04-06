@@ -8,8 +8,8 @@ package excepciones;
  *
  * @author juans
  */
-public class VehiculoApagadoNoPuedeAcelerarNiFrenarException extends EstadoVehiculoException {
-    public VehiculoApagadoNoPuedeAcelerarNiFrenarException() {
-        super("El vehículo apagado no puede acelerar ni frenar.");
+public class FrenadoBruscoExcesoVelocidadLlantasException extends VehiculoPatinoException {
+    public FrenadoBruscoExcesoVelocidadLlantasException() {
+        super("Frenado brusco con velocidad superior al límite de las llantas.");
     }
 }
