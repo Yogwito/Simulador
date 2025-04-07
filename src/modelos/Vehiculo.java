@@ -1,28 +1,22 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package modelos;
 
-/**
- *
- * @author juans
- */
 import excepciones.*;
-import java.io.*;
-import java.nio.file.*;
-import java.nio.charset.*;
-import java.util.List;
+import modelos.enum.TipoLlantas;
+import modelos.enum.TipoMotor;
 
 public class Vehiculo {
     private boolean encendido;
     private boolean accidentado;
     private int velocidad;
+    private Motor motor;
+    private Llantas llantas;
 
-    public Vehiculo() {
+    public Vehiculo(TipoMotor tipoMotor, TipoLlantas tipoLlantas) {
         this.encendido = false;
         this.accidentado = false;
         this.velocidad = 0;
+        this.motor = new Motor(tipoMotor);
+        this.llantas = new Llantas(tipoLlantas);
     }
 
     public void encender() throws VehiculoYaEncendidoException, VehiculoAccidentadoException {
@@ -41,7 +35,7 @@ public class Vehiculo {
     public void acelerar(int incremento) throws VehiculoApagadoNoPuedeAcelerarNiFrenarException, VehiculoAccidentadoException, AceleracionExcesivaMotorException {
         if (accidentado) throw new VehiculoAccidentadoException();
         if (!encendido) throw new VehiculoApagadoNoPuedeAcelerarNiFrenarException();
-        if (incremento > 40) throw new AceleracionExcesivaMotorException();
+        if (incremento > motor.getMaximoIncrementoVelocidad()) throw new AceleracionExcesivaMotorException();
         velocidad += incremento;
     }
 
@@ -50,7 +44,7 @@ public class Vehiculo {
         if (!encendido) throw new VehiculoApagadoNoPuedeAcelerarNiFrenarException();
         if (velocidad == 0) throw new VehiculoDetenidoNoPuedeFrenarException();
         if (decremento > velocidad) throw new FrenadoMayorAVelocidadActualException();
-        if (decremento > 30) throw new FrenadoBruscoExcesoVelocidadLlantasException();
+        if (decremento > llantas.getMaximoFrenadoSeguro()) throw new FrenadoBruscoExcesoVelocidadLlantasException();
         velocidad -= decremento;
     }
 
@@ -70,5 +64,12 @@ public class Vehiculo {
     public boolean estaAccidentado() {
         return accidentado;
     }
-}
 
+    public Motor getMotor() {
+        return motor;
+    }
+
+    public Llantas getLlantas() {
+        return llantas;
+    }
+} 

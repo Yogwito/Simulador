@@ -8,6 +8,6 @@ package modelos.Enum;
  *
  * @author juans
  */
-public class TipoMotor {
-    
+public enum TipoMotor {
+    DIESEL, GASOLINA, ELECTRICO
 }

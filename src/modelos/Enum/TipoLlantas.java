@@ -8,6 +8,6 @@ package modelos.Enum;
  *
  * @author juans
  */
-public class TipoLlantas {
-    
+public enum TipoLlantas {
+    DEPORTIVAS, TODO_TERRENO, NORMALES
 }
