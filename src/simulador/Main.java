@@ -8,7 +8,6 @@ package simulador;
  *
  * @author juans
  */
-import modelos.Vehiculo;
 
 public class Main {
     public static void main(String[] args) {

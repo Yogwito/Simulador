@@ -8,6 +8,19 @@ package modelos.Enum;
  *
  * @author juans
  */
+
 public enum TipoLlantas {
-    DEPORTIVAS, TODO_TERRENO, NORMALES
+    BUENAS(110),
+    BONITAS(70),
+    BARATAS(50);
+
+    private final int limiteVelocidad;
+
+    TipoLlantas(int limiteVelocidad) {
+        this.limiteVelocidad = limiteVelocidad;
+    }
+
+    public int getLimiteVelocidad() {
+        return limiteVelocidad;
+    }
 }

@@ -1,8 +1,10 @@
-package modelos;
+package simulador;
 
 import excepciones.*;
 import modelos.enum.TipoLlantas;
 import modelos.enum.TipoMotor;
+import modelos.Llantas;
+import modelos.Motor;
 
 public class Vehiculo {
     private boolean encendido;

@@ -8,20 +8,19 @@ package modelos;
  *
  * @author juans
  */
+
 public class Llantas {
     private TipoLlantas tipo;
-    private int limiteVelocidad;
 
     public Llantas(TipoLlantas tipo) {
         this.tipo = tipo;
-        switch (tipo) {
-            case DEPORTIVAS -> limiteVelocidad = 180;
-            case TODO_TERRENO -> limiteVelocidad = 100;
-            case NORMALES -> limiteVelocidad = 140;
-        }
+    }
+
+    public TipoLlantas getTipo() {
+        return tipo;
     }
 
     public int getLimiteVelocidad() {
-        return limiteVelocidad;
+        return tipo.getLimiteVelocidad();
     }
 }

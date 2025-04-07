@@ -9,7 +9,6 @@ package simulador;
  * @author juans
  */
 
-import modelos.Vehiculo;
 import modelos.enum.TipoLlantas;
 import modelos.enum.TipoMotor;
 

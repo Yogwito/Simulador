@@ -11,18 +11,16 @@ package modelos;
 
 public class Motor {
     private TipoMotor tipo;
-    private int velocidadMaxima;
 
     public Motor(TipoMotor tipo) {
         this.tipo = tipo;
-        switch (tipo) {
-            case DIESEL -> velocidadMaxima = 120;
-            case GASOLINA -> velocidadMaxima = 150;
-            case ELECTRICO -> velocidadMaxima = 100;
-        }
+    }
+
+    public TipoMotor getTipo() {
+        return tipo;
     }
 
     public int getVelocidadMaxima() {
-        return velocidadMaxima;
+        return tipo.getVelocidadMaxima();
     }
 }

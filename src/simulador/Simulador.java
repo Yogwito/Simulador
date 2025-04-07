@@ -8,7 +8,6 @@ package simulador;
  *
  * @author juans
  */
-import modelos.Vehiculo;
 import excepciones.*;
 import java.io.IOException;
 
