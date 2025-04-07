@@ -14,6 +14,11 @@ import java.nio.charset.*;
 import java.nio.file.*;
 import java.util.*;
 
+import modelos.Enum.TipoLlantas;
+import modelos.Enum.TipoMotor;
+import modelos.Llantas;
+import modelos.Motor;
+
 public class ConfiguradorVehiculo {
 
     public Vehiculo leerDesdeArchivo(String nombreArchivo) {

@@ -4,6 +4,8 @@
  */
 package modelos;
 
+import modelos.Enum.TipoMotor;
+
 /**
  *
  * @author juans

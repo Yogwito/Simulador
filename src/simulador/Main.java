@@ -1,26 +1,25 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package simulador;
 
-/**
- *
- * @author juans
- */
+import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) {
+        System.out.println("*** SIMULADOR DE COMPORTAMIENTO DE AUTOMÓVIL ***");
+        
+        // Usar la ruta predeterminada en vez de solicitarla
+        String rutaArchivo = "src/config.txt";
+        
         try {
-            Vehiculo vehiculo = ManejadorArchivos.leerVehiculoDesdeArchivo("ARCHIVO_DE_ENTRADA.txt");
+            Vehiculo vehiculo = ManejadorArchivos.leerVehiculoDesdeArchivo(rutaArchivo);
             Simulador simulador = new Simulador(vehiculo);
-            simulador.ejecutar();
-
-            String resultado = "Simulacion completada. Velocidad final: " + vehiculo.getVelocidad();
-            ManejadorArchivos.guardarResultadoSimulacion("ARCHIVO_DE_SALIDA.txt", resultado);
-            System.out.println(resultado);
+            simulador.ejecutarSimulacion();
+        } catch (IOException e) {
+            System.out.println("Error leyendo archivo de configuración: " + e.getMessage());
+            System.out.println("Verifique que el archivo exista y tenga el formato correcto:");
+            System.out.println("llantas   TIPO (BUENAS, BONITAS o BARATAS)");
+            System.out.println("motor     CILINDRAJE (1000, 2000 o 3000)");
         } catch (Exception e) {
-            System.out.println("Error: " + e.getMessage());
+            System.out.println("Error inesperado: " + e.getMessage());
         }
     }
 }
