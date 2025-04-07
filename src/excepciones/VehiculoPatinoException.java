@@ -10,6 +10,6 @@ package excepciones;
  */
 public class VehiculoPatinoException extends SeguridadVehiculoException {
     public VehiculoPatinoException(String message) {
-        super("¡El vehículo ha patinado! " + message);
+        super("¡El vehiculo ha patinado! " + message);
     }
 }

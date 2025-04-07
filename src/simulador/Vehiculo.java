@@ -22,10 +22,10 @@ public class Vehiculo {
     }
 
     public void encender() throws VehiculoYaEncendidoException, VehiculoAccidentadoException {
-        if (accidentado) throw new VehiculoAccidentadoException("El vehículo está accidentado y no puede encenderse.");
+        if (accidentado) throw new VehiculoAccidentadoException("El vehiculo esta accidentado y no puede encenderse.");
         if (encendido) throw new VehiculoYaEncendidoException();
         encendido = true;
-        System.out.println("Vehículo encendido correctamente.");
+        System.out.println("Vehiculo encendido correctamente.");
     }
 
     public void apagar() throws VehiculoYaApagadoException, ApagarVehiculoAltaVelocidadException {
@@ -37,12 +37,12 @@ public class Vehiculo {
             throw new ApagarVehiculoAltaVelocidadException();
         }
         encendido = false;
-        System.out.println("Vehículo apagado correctamente.");
+        System.out.println("Vehiculo apagado correctamente.");
     }
 
     public void acelerar(int incremento) throws VehiculoApagadoNoPuedeAcelerarNiFrenarException, AceleracionExcesivaMotorException {
         if (accidentado) {
-            System.out.println("El vehículo está accidentado y no puede acelerar.");
+            System.out.println("El vehiculo esta accidentado y no puede acelerar.");
             return;
         }
         if (!encendido) throw new VehiculoApagadoNoPuedeAcelerarNiFrenarException();
@@ -59,7 +59,7 @@ public class Vehiculo {
         System.out.println("Acelerando: " + incremento + " km/h. Velocidad actual: " + velocidad + " km/h");
         
         if (incremento > 30) {
-            System.out.println("¡Aceleración brusca detectada!");
+            System.out.println("¡Aceleracion brusca detectada!");
         }
     }
 
@@ -68,7 +68,7 @@ public class Vehiculo {
                                              FrenadoMayorAVelocidadActualException,
                                              FrenadoBruscoExcesoVelocidadLlantasException {
         if (accidentado) {
-            System.out.println("El vehículo está accidentado y no puede frenar.");
+            System.out.println("El vehiculo esta accidentado y no puede frenar.");
             return;
         }
         
@@ -97,7 +97,7 @@ public class Vehiculo {
         
         if (velocidad == 0) {
             patinando = false;
-            System.out.println("Vehículo detenido completamente.");
+            System.out.println("Vehiculo detenido completamente.");
         }
     }
 
@@ -135,9 +135,9 @@ public class Vehiculo {
     
     public String getEstado() {
         StringBuilder estado = new StringBuilder();
-        estado.append("Estado del vehículo:\n");
-        estado.append("- Motor: ").append(motor.getTipo()).append(" (Velocidad máxima: ").append(motor.getVelocidadMaxima()).append(" km/h)\n");
-        estado.append("- Llantas: ").append(llantas.getTipo()).append(" (Límite velocidad: ").append(llantas.getLimiteVelocidad()).append(" km/h)\n");
+        estado.append("Estado del vehiculo:\n");
+        estado.append("- Motor: ").append(motor.getTipo()).append(" (Velocidad maxima: ").append(motor.getVelocidadMaxima()).append(" km/h)\n");
+        estado.append("- Llantas: ").append(llantas.getTipo()).append(" (Limite velocidad: ").append(llantas.getLimiteVelocidad()).append(" km/h)\n");
         estado.append("- Encendido: ").append(encendido ? "Sí" : "No").append("\n");
         estado.append("- Velocidad actual: ").append(velocidad).append(" km/h\n");
         estado.append("- Accidentado: ").append(accidentado ? "Sí" : "No").append("\n");

@@ -10,6 +10,6 @@ package excepciones;
  */
 public class AceleracionExcesivaMotorException extends VehiculoAccidentadoException {
     public AceleracionExcesivaMotorException() {
-        super("Aceleración más allá de la capacidad del motor.");
+        super("Aceleracion mas alla de la capacidad del motor.");
     }
 }

@@ -10,6 +10,6 @@ package excepciones;
  */
 public class ApagarVehiculoAltaVelocidadException extends VehiculoAccidentadoException {
     public ApagarVehiculoAltaVelocidadException() {
-        super("Se apagó el vehículo a alta velocidad (>60 Km/h).");
+        super("Se apago el vehiculo a alta velocidad (>60 Km/h).");
     }
 }

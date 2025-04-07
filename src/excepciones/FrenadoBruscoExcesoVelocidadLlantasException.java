@@ -10,6 +10,6 @@ package excepciones;
  */
 public class FrenadoBruscoExcesoVelocidadLlantasException extends VehiculoPatinoException {
     public FrenadoBruscoExcesoVelocidadLlantasException() {
-        super("Frenado brusco con velocidad superior al límite de las llantas.");
+        super("Frenado brusco con velocidad superior al limite de las llantas.");
     }
 }

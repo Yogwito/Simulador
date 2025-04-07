@@ -10,6 +10,6 @@ package excepciones;
  */
 public class VehiculoDetenidoNoPuedeFrenarException extends EstadoVehiculoException {
     public VehiculoDetenidoNoPuedeFrenarException() {
-        super("El vehículo detenido no puede frenar.");
+        super("El vehiculo detenido no puede frenar.");
     }
 }

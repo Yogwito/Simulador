@@ -10,6 +10,6 @@ package excepciones;
  */
 public class VehiculoApagadoNoPuedeAcelerarNiFrenarException extends EstadoVehiculoException {
     public VehiculoApagadoNoPuedeAcelerarNiFrenarException() {
-        super("El vehículo apagado no puede acelerar ni frenar.");
+        super("El vehiculo apagado no puede acelerar ni frenar.");
     }
 }

@@ -4,7 +4,7 @@ import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("*** SIMULADOR DE COMPORTAMIENTO DE AUTOMÓVIL ***");
+        System.out.println("*** SIMULADOR DE COMPORTAMIENTO DE AUTOMOVIL ***");
         
         // Usar la ruta predeterminada en vez de solicitarla
         String rutaArchivo = "src/config.txt";
@@ -14,7 +14,7 @@ public class Main {
             Simulador simulador = new Simulador(vehiculo);
             simulador.ejecutarSimulacion();
         } catch (IOException e) {
-            System.out.println("Error leyendo archivo de configuración: " + e.getMessage());
+            System.out.println("Error leyendo archivo de configuracion: " + e.getMessage());
             System.out.println("Verifique que el archivo exista y tenga el formato correcto:");
             System.out.println("llantas   TIPO (BUENAS, BONITAS o BARATAS)");
             System.out.println("motor     CILINDRAJE (1000, 2000 o 3000)");

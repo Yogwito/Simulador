@@ -13,7 +13,7 @@ public class Simulador {
     }
     
     public void ejecutarSimulacion() {
-        System.out.println("\n*** SIMULADOR DE CONDUCCIÓN DE VEHÍCULO ***");
+        System.out.println("\n*** SIMULADOR DE CONDUCCION DE VEHICULO ***");
         System.out.println(vehiculo.getEstado());
         
         boolean salir = false;
@@ -30,7 +30,7 @@ public class Simulador {
                         vehiculo.apagar();
                         break;
                     case 3: // Acelerar
-                        System.out.print("Ingrese la intensidad de aceleración (km/h): ");
+                        System.out.print("Ingrese la intensidad de aceleracion (km/h): ");
                         int aceleracion = scanner.nextInt();
                         vehiculo.acelerar(aceleracion);
                         break;
@@ -47,14 +47,14 @@ public class Simulador {
                         break;
                     case 7: // Salir
                         salir = true;
-                        System.out.println("Fin de la simulación");
+                        System.out.println("Fin de la simulacion");
                         break;
                     default:
-                        System.out.println("Opción no válida");
+                        System.out.println("Opcion no valida");
                 }
                 
             } catch (VehiculoException e) {
-                System.out.println("¡ATENCIÓN! " + e.getMessage());
+                System.out.println("ATENCION! " + e.getMessage());
             } catch (Exception e) {
                 System.out.println("Error inesperado: " + e.getMessage());
                 scanner.nextLine(); // Limpiar el búfer
@@ -70,19 +70,19 @@ public class Simulador {
     
     private void mostrarMenu() {
         System.out.println("\n--- MENU DE ACCIONES ---");
-        System.out.println("1. Encender vehículo");
-        System.out.println("2. Apagar vehículo");
+        System.out.println("1. Encender vehiculo");
+        System.out.println("2. Apagar vehiculo");
         System.out.println("3. Acelerar");
         System.out.println("4. Frenar");
         System.out.println("5. Frenar bruscamente");
-        System.out.println("6. Ver estado del vehículo");
+        System.out.println("6. Ver estado del vehiculo");
         System.out.println("7. Salir");
-        System.out.print("Seleccione una opción: ");
+        System.out.print("Seleccione una opcion: ");
     }
     
     private int leerOpcion() {
         while (!scanner.hasNextInt()) {
-            System.out.println("Por favor, ingrese un número válido.");
+            System.out.println("Por favor, ingrese un numero valido.");
             scanner.next();
         }
         return scanner.nextInt();

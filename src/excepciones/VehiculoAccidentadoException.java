@@ -10,6 +10,6 @@ package excepciones;
  */
 public class VehiculoAccidentadoException extends SeguridadVehiculoException {
     public VehiculoAccidentadoException(String message) {
-        super("¡El vehículo se ha accidentado! " + message);
+        super("¡El vehiculo se ha accidentado! " + message);
     }
 }

@@ -10,6 +10,6 @@ package excepciones;
  */
 public class VehiculoYaEncendidoException extends EstadoVehiculoException {
     public VehiculoYaEncendidoException() {
-        super("El vehículo ya está encendido.");
+        super("El vehiculo ya esta encendido.");
     }
 }
