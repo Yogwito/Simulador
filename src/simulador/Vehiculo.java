@@ -1,8 +1,7 @@
 package simulador;
 
 import excepciones.*;
-import modelos.Motor;
-import modelos.Llantas;
+import modelos.*;
 
 public class Vehiculo {
     private Motor motor;
@@ -92,7 +91,7 @@ public class Vehiculo {
         System.out.println("Frenando: " + decremento + " km/h. Velocidad actual: " + velocidad + " km/h");
         
         if (frenaBruscamente) {
-            System.out.println("¡Frenado brusco detectado!");
+            System.out.println("Frenado brusco detectado!");
         }
         
         if (velocidad == 0) {

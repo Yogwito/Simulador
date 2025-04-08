@@ -8,7 +8,7 @@ import java.util.List;
 import modelos.Enum.TipoLlantas;
 import modelos.Enum.TipoMotor;
 
-public class ManejadorArchivos {
+public class LectorArchivo {
     public static Vehiculo leerVehiculoDesdeArchivo(String ruta) throws IOException {
         Charset charset = Charset.forName("UTF-8");
         List<String> lineas = Files.readAllLines(Paths.get(ruta), charset);
