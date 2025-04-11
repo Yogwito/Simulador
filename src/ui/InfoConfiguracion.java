@@ -9,7 +9,7 @@ import modelos.Carrera;
 
 /**
  *
- * @author juanp
+ * @author Trujirendjj
  */
 public class InfoConfiguracion extends javax.swing.JFrame {
 

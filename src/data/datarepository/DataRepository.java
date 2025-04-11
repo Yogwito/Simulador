@@ -12,7 +12,7 @@ import modelos.Enum.TipoMotor;
 
 /**
  *
- * @author juanp
+ * @author Trujirendjj
  */
 public interface DataRepository {
     public void saveConfig(TipoLlantas llanta, TipoMotor motor, Pistas pista) 

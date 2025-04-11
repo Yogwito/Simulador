@@ -8,7 +8,7 @@ import modelos.Enum.Pistas;
 
 /**
  *
- * @author juanp
+ * @author Trujirendjj
  */
 public class Carrera {
     private Vehiculo vehiculo;

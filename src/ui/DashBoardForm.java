@@ -8,7 +8,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author juanp
+ * @author Trujirendjj
  */
 public class DashBoardForm extends javax.swing.JFrame {
 

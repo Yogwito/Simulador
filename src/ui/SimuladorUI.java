@@ -8,7 +8,7 @@ import javax.swing.JLabel;
 
 /**
  *
- * @author Juan Pablo
+ * @author Trujirendjj
  */
 public class SimuladorUI extends javax.swing.JFrame {
 

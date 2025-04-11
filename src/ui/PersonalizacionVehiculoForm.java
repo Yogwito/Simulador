@@ -16,7 +16,7 @@ import modelos.Enum.TipoMotor;
 
 /**
  *
- * @author juanp
+ * @author Trujirendjj
  */
 public class PersonalizacionVehiculoForm extends javax.swing.JFrame {
 

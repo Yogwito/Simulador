@@ -6,7 +6,7 @@ package services.sounds;
 
 /**
  *
- * @author juanp
+ * @author Trujirendjj
  */
 public interface SoundService {
     public void encender();

@@ -6,7 +6,7 @@ package modelos.Enum;
 
 /**
  *
- * @author Juan Pablo
+ * @author Trujirendjj
  */
 public enum Pistas {
     MONZA("Autodromo Nazionale Monza", 5.793,"/assets/images/tracks/monza.png"),
