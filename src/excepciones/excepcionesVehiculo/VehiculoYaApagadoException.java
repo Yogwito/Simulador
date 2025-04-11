@@ -2,14 +2,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package excepciones;
+package excepciones.excepcionesVehiculo;
 
 /**
  *
  * @author juans
  */
-public class EstadoVehiculoException extends VehiculoException {
-    public EstadoVehiculoException(String message) {
-        super(message);
+public class VehiculoYaApagadoException extends EstadoVehiculoException {
+    public VehiculoYaApagadoException() {
+        super("El vehiculo ya esta apagado.");
     }
 }

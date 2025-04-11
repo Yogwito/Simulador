@@ -2,14 +2,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package excepciones;
+package excepciones.excepcionesArchivo;
 
 /**
  *
- * @author juans
+ * @author juanp
  */
-public class SeguridadVehiculoException extends VehiculoException {
-    public SeguridadVehiculoException(String message) {
-        super(message);
+public class ConfiguracionExistenteException extends Exception{
+    public ConfiguracionExistenteException(){
+        super("ARCHIVO DE CONFIGURACION YA EXISTE");
     }
 }
