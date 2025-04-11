@@ -66,9 +66,6 @@ public class FileDataRepository implements DataRepository{
         if(!archivoConfiguracion.exists()){
             crearArchivo(archivoConfiguracion);
         }
-        if(archivoConfiguracion.exists()){
-            throw new ConfiguracionExistenteException();
-        }
         try{
            StringBuilder sb = new StringBuilder();
            PrintWriter out = new PrintWriter(new FileWriter(archivoConfiguracion,true));
