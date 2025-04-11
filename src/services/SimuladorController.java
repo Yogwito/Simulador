@@ -18,6 +18,7 @@ import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.Timer;
 import modelos.Carrera;
 import modelos.Enum.Pistas;
 import modelos.Enum.TipoLlantas;
@@ -30,7 +31,7 @@ import ui.SimuladorUI;
 
 /**
  *
- * @author juanp
+ * @author Trujirendjj
  */
 public class SimuladorController {
 
@@ -41,6 +42,7 @@ public class SimuladorController {
     private PersonalizacionVehiculoForm config;
     private DataRepository repositorio;
     private InfoConfiguracion infoConfig;
+
     public SimuladorController(DataRepository repository) {
         this.repositorio = repository;
         this.createDashBoardMenu();
@@ -63,27 +65,41 @@ public class SimuladorController {
         this.config.addCrearConfigButtonListener(new PanelListener());
         this.config.createForm();
     }
-    private void handleError(){
-        try{
-            
-            this.simulador.setErrorLabelVisibility();
-            Thread.sleep(100);
-            this.simulador.setErrorLabelVisibility();
-        }catch(Exception e){
-            
-        }
+
+    private void handleError(String msg) {
+        JPanel errorPanel = this.simulador.getErrorPanel();
+        JLabel errorText = this.simulador.getErrorText();
+        errorText.setText(msg);
+        errorPanel.setVisible(true);
+        Timer timer = new Timer(400, new ActionListener() {
+            int contador = 0;
+
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                errorPanel.setVisible(!errorPanel.isVisible()); // Parpadea
+
+                contador++;
+                if (contador >= 5) { // Después de 5 parpadeos (1 segundo total)
+                    ((Timer) evt.getSource()).stop();
+                    errorPanel.setVisible(false); // Lo ocultamos al final
+                }
+            }
+        });
+
+        timer.start();
     }
+
     private void handleEncendido() {
         try {
             this.carreraSimulacion.getVehiculo().encender();
             System.out.println("XD");
             this.paqueteSonidos.encender();
         } catch (VehiculoYaEncendidoException e) {
-            this.handleError();
+            this.handleError(e.getMessage());
         } catch (VehiculoAccidentadoException e1) {
             System.out.println(e1.getMessage());
-        }catch(Exception e){
-            
+        } catch (Exception e) {
+
         }
     }
 
@@ -119,6 +135,7 @@ public class SimuladorController {
             this.config.dispose();
         }
     }
+
     private void createInfoConfigMenu() {
         this.carreraSimulacion = this.repositorio.readConfig();
         this.infoConfig = new InfoConfiguracion(this.carreraSimulacion);

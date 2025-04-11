@@ -6,7 +6,7 @@ package test;
 
 /**
  *
- * @author juanp
+ * @author Trujirendjj
  */
 import data.datarepository.FileDataRepository;
 import services.SimuladorController;

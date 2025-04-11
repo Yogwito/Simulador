@@ -5,6 +5,7 @@
 package ui;
 
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 /**
  *
@@ -15,10 +16,9 @@ public class SimuladorUI extends javax.swing.JFrame {
     /**
      * Creates new form SimuladorUI
      */
-    public boolean isVisible = false;
     public SimuladorUI() {
         initComponents();
-        this.errorPanel.setVisible(isVisible);
+        this.errorPanel.setVisible(false);
     }
 
     /**
@@ -38,7 +38,7 @@ public class SimuladorUI extends javax.swing.JFrame {
         apagarButton = new javax.swing.JLabel();
         errorPanel = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        errorText = new javax.swing.JLabel();
         interiorCarro = new javax.swing.JLabel();
         pistaImagen = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -83,11 +83,11 @@ public class SimuladorUI extends javax.swing.JFrame {
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/simulation/error.png"))); // NOI18N
         errorPanel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 0, 50, 50));
 
-        jLabel5.setBackground(new java.awt.Color(255, 0, 0));
-        jLabel5.setFont(new java.awt.Font("ROG Fonts", 0, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel5.setText("jLabel5");
-        errorPanel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 450, 30));
+        errorText.setBackground(new java.awt.Color(255, 0, 0));
+        errorText.setFont(new java.awt.Font("ROG Fonts", 0, 14)); // NOI18N
+        errorText.setForeground(new java.awt.Color(255, 0, 0));
+        errorText.setText("jLabel5");
+        errorPanel.add(errorText, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 450, 30));
 
         jPanel1.add(errorPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 30, 510, 50));
 
@@ -154,10 +154,6 @@ public class SimuladorUI extends javax.swing.JFrame {
     public JLabel getFrenarButton() {
         return frenarButton;
     }
-    public void setErrorLabelVisibility(){
-        this.isVisible = !isVisible;
-        this.errorPanel.setVisible(this.isVisible);
-    }
     public void addAcelerarButtonListener(java.awt.event.MouseListener l) {
         this.acelerarButton.addMouseListener(l);
     }
@@ -169,6 +165,14 @@ public class SimuladorUI extends javax.swing.JFrame {
     public void addEncenderButtonListener(java.awt.event.MouseListener l) {
         this.encenderButton.addMouseListener(l);
         
+    }
+
+    public JLabel getErrorText() {
+        return errorText;
+    }
+    
+    public JPanel getErrorPanel() {
+        return errorPanel;
     }
 
     public JLabel getPistaImagen() {
@@ -194,6 +198,7 @@ public class SimuladorUI extends javax.swing.JFrame {
     private javax.swing.JLabel apagarButton;
     private javax.swing.JLabel encenderButton;
     private javax.swing.JPanel errorPanel;
+    private javax.swing.JLabel errorText;
     private javax.swing.JLabel frenarBruscamenteButton;
     private javax.swing.JLabel frenarButton;
     private javax.swing.JLabel interiorCarro;
@@ -202,7 +207,6 @@ public class SimuladorUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel pistaImagen;
