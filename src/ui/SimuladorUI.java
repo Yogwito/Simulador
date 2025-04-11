@@ -55,27 +55,26 @@ public class SimuladorUI extends javax.swing.JFrame {
         frenarButton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         frenarButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/1593815.png"))); // NOI18N
         frenarButton.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jPanel1.add(frenarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 390, 110, -1));
+        jPanel1.add(frenarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 370, 110, -1));
 
         frenarBruscamenteButton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         frenarBruscamenteButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/3410140.png"))); // NOI18N
         frenarBruscamenteButton.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jPanel1.add(frenarBruscamenteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 250, 110, 100));
+        jPanel1.add(frenarBruscamenteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 230, 110, 100));
 
         acelerarButton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         acelerarButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/16013421.png"))); // NOI18N
         acelerarButton.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jPanel1.add(acelerarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 340, 110, 140));
+        jPanel1.add(acelerarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 310, 110, 140));
 
         encenderButton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         encenderButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/4943215.png"))); // NOI18N
-        encenderButton.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jPanel1.add(encenderButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 90, -1));
+        jPanel1.add(encenderButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 120, 120));
 
         apagarButton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         apagarButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/9068977.png"))); // NOI18N
-        apagarButton.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jPanel1.add(apagarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 330, 90, -1));
+        apagarButton.setToolTipText("");
+        jPanel1.add(apagarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 340, 100, 100));
 
         errorPanel.setBackground(new java.awt.Color(255, 255, 255));
         errorPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -123,9 +122,7 @@ public class SimuladorUI extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1184, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

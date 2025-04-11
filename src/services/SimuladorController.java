@@ -18,7 +18,10 @@ import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JSlider;
 import javax.swing.Timer;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import modelos.Carrera;
 import modelos.Enum.Pistas;
 import modelos.Enum.TipoLlantas;
@@ -64,6 +67,16 @@ public class SimuladorController {
         this.config.addListadoPistasListener(new ComboListener());
         this.config.addCrearConfigButtonListener(new PanelListener());
         this.config.createForm();
+    }
+
+    private void createInfoConfigMenu() {
+        this.carreraSimulacion = this.repositorio.readConfig();
+        this.infoConfig = new InfoConfiguracion(this.carreraSimulacion);
+        this.infoConfig.addSimularButtonListener(new PanelListener());
+        this.infoConfig.addAceleracionSliderListener(new SliderListener());
+        this.infoConfig.addFrenadoSliderListener(new SliderListener());
+        this.infoConfig.addFrenadoBruscoSliderListener(new SliderListener());
+        this.infoConfig.createForm();
     }
 
     private void handleError(String msg) {
@@ -136,11 +149,10 @@ public class SimuladorController {
         }
     }
 
-    private void createInfoConfigMenu() {
-        this.carreraSimulacion = this.repositorio.readConfig();
-        this.infoConfig = new InfoConfiguracion(this.carreraSimulacion);
-        this.infoConfig.addSimularButtonListener(new PanelListener());
-        this.infoConfig.createForm();
+    private void handleCambioSlider(JSlider slider, JLabel label) {
+        int value = slider.getValue();
+        label.setText(value + "M/S^2");
+
     }
 
     private void iniciarSimulacion() {
@@ -202,6 +214,28 @@ public class SimuladorController {
             JPanel src = (JPanel) e.getSource();
             src.setBackground(Color.BLACK);
         }
+    }
+
+    private class SliderListener implements ChangeListener {
+
+        @Override
+        public void stateChanged(ChangeEvent e) {
+            JSlider src = (JSlider) e.getSource();
+            if (src == infoConfig.getAceleracionSlider()) {
+                handleCambioSlider(infoConfig.getAceleracionSlider(),
+                        infoConfig.getSensibilidadAceleracionLabel());
+            }
+            if (src == infoConfig.getFrenadoSlider()) {
+                handleCambioSlider(infoConfig.getFrenadoSlider(),
+                        infoConfig.getSensibilidadFrenadoLabel());
+            }
+            if (src == infoConfig.getFrenadoBruscoSlider()) {
+                handleCambioSlider(infoConfig.getFrenadoBruscoSlider(),
+                        infoConfig.getSensibilidadFrenadoBruscoLabel());
+            }
+
+        }
+
     }
 
     private class ComboListener implements ActionListener {
