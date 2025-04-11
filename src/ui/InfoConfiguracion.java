@@ -209,22 +209,22 @@ public class InfoConfiguracion extends javax.swing.JFrame {
         jLabel22.setFont(new java.awt.Font("ROG Fonts", 0, 12)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(153, 0, 0));
         jLabel22.setText("SENSIBILIDAD DE FRENADO");
-        jPanel4.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 250, -1, -1));
+        jPanel4.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 250, -1, -1));
 
         frenadoSlider.setMaximum(20);
         frenadoSlider.setMinorTickSpacing(1);
         frenadoSlider.setValue(5);
-        jPanel4.add(frenadoSlider, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 280, 280, -1));
+        jPanel4.add(frenadoSlider, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 280, 280, -1));
 
         jLabel23.setFont(new java.awt.Font("ROG Fonts", 0, 12)); // NOI18N
         jLabel23.setForeground(new java.awt.Color(153, 0, 0));
         jLabel23.setText("SENSIBILIDAD FRENADO BRUSCO");
-        jPanel4.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 250, -1, -1));
+        jPanel4.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 250, -1, -1));
 
         frenadoBruscoSlider.setMaximum(50);
         frenadoBruscoSlider.setMinimum(30);
         frenadoBruscoSlider.setValue(35);
-        jPanel4.add(frenadoBruscoSlider, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 280, 280, -1));
+        jPanel4.add(frenadoBruscoSlider, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 280, 280, -1));
 
         jLabel26.setFont(new java.awt.Font("ROG Fonts", 0, 12)); // NOI18N
         jLabel26.setForeground(new java.awt.Color(153, 0, 0));
@@ -284,7 +284,7 @@ public class InfoConfiguracion extends javax.swing.JFrame {
             .addComponent(sensibilidadFrenadoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
         );
 
-        jPanel4.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 310, -1, -1));
+        jPanel4.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 310, -1, -1));
 
         jPanel9.setBackground(new java.awt.Color(51, 51, 51));
 
@@ -302,7 +302,7 @@ public class InfoConfiguracion extends javax.swing.JFrame {
             .addComponent(sensibilidadFrenadoBruscoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
         );
 
-        jPanel4.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 310, -1, -1));
+        jPanel4.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 310, -1, -1));
 
         jLabel28.setFont(new java.awt.Font("ROG Fonts", 0, 12)); // NOI18N
         jLabel28.setForeground(new java.awt.Color(153, 0, 0));
