@@ -100,7 +100,7 @@ public class SimuladorController {
 
     private void handleCambioPista(Pistas pista) {
         this.config.getTrackIcon().setIcon(new javax.swing.ImageIcon(
-                getClass().getResource(pista.getTrackImgPath())));
+                getClass().getResource(pista.getTrackImgIconPath())));
         this.config.getCircuitName().setText(pista.getNombrePista());
         this.config.getCircuitLength().setText(pista.getLongitudPista() + "KM");
     }
@@ -130,6 +130,9 @@ public class SimuladorController {
         this.paqueteSonidos = new PorscheSoundService();
         this.simulador = new SimuladorUI();
         this.simulador.addEncenderButtonListener(new ButtonListener());
+        this.simulador.getPistaImagen().setIcon(new javax.swing.ImageIcon(
+                getClass().getResource(this.carreraSimulacion.getPista()
+                        .getTrackImgPath())));
         this.simulador.createForm();
     }
 

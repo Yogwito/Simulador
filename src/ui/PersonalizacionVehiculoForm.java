@@ -38,7 +38,7 @@ public class PersonalizacionVehiculoForm extends javax.swing.JFrame {
         this.nombreLlantaLabel.setText(listaLlantas[0].getNombre());
         this.velocidadLlantaLabel.setText(listaLlantas[0].getLimiteVelocidad()+"KM/H");
         this.trackIcon.setIcon(new javax.swing.ImageIcon(
-                getClass().getResource(listaPistas[0].getTrackImgPath())));
+                getClass().getResource(listaPistas[0].getTrackImgIconPath())));
         this.circuitName.setText(listaPistas[0].getNombrePista());
         this.circuitLength.setText(listaPistas[0].getLongitudPista() + "KM");
     }

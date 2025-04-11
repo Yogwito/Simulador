@@ -23,7 +23,7 @@ public class InfoConfiguracion extends javax.swing.JFrame {
     public InfoConfiguracion(Carrera carrera) {
         initComponents();
         this.circuitIcon.setIcon(new javax.swing.ImageIcon(getClass()
-                .getResource(carrera.getPista().getTrackImgPath())));
+                .getResource(carrera.getPista().getTrackImgIconPath())));
         this.nombreCircuitoLabel.setText(carrera.getPista().getNombrePista());
         this.longitudCircuitoLabel.setText(
                 carrera.getPista().getLongitudPista() + "KM");
