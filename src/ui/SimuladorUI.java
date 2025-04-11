@@ -39,16 +39,27 @@ public class SimuladorUI extends javax.swing.JFrame {
         errorPanel = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         errorText = new javax.swing.JLabel();
+        velocidad = new javax.swing.JLabel();
         labelVelocidad = new javax.swing.JLabel();
         interiorCarro = new javax.swing.JLabel();
         pistaImagen = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        nombreLlantasLabel = new javax.swing.JLabel();
+        velLlantasLabel = new javax.swing.JLabel();
+        nombreMotorLabel = new javax.swing.JLabel();
+        velMotorLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1316, 500));
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -56,26 +67,26 @@ public class SimuladorUI extends javax.swing.JFrame {
         frenarButton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         frenarButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/1593815.png"))); // NOI18N
         frenarButton.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jPanel1.add(frenarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 370, 110, -1));
+        jPanel1.add(frenarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 350, 110, -1));
 
         frenarBruscamenteButton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         frenarBruscamenteButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/3410140.png"))); // NOI18N
         frenarBruscamenteButton.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jPanel1.add(frenarBruscamenteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 190, 110, 100));
+        jPanel1.add(frenarBruscamenteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 180, 110, 100));
 
         acelerarButton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         acelerarButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/16013421.png"))); // NOI18N
         acelerarButton.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jPanel1.add(acelerarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 330, 110, 140));
+        jPanel1.add(acelerarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 310, 110, 140));
 
         encenderButton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         encenderButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/4943215.png"))); // NOI18N
-        jPanel1.add(encenderButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 120, 120));
+        jPanel1.add(encenderButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 120, 120));
 
         apagarButton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         apagarButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/9068977.png"))); // NOI18N
         apagarButton.setToolTipText("");
-        jPanel1.add(apagarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 340, 100, 100));
+        jPanel1.add(apagarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, 100, 100));
 
         errorPanel.setBackground(new java.awt.Color(255, 255, 255));
         errorPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -92,11 +103,17 @@ public class SimuladorUI extends javax.swing.JFrame {
 
         jPanel1.add(errorPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, 700, 50));
 
+        velocidad.setBackground(new java.awt.Color(255, 0, 0));
+        velocidad.setFont(new java.awt.Font("ROG Fonts", 0, 14)); // NOI18N
+        velocidad.setForeground(new java.awt.Color(0, 0, 255));
+        velocidad.setText("VELOCIDAD:");
+        jPanel1.add(velocidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 90, 30));
+
         labelVelocidad.setBackground(new java.awt.Color(255, 0, 0));
         labelVelocidad.setFont(new java.awt.Font("ROG Fonts", 0, 14)); // NOI18N
         labelVelocidad.setForeground(new java.awt.Color(0, 0, 255));
-        labelVelocidad.setText("velocidad:");
-        jPanel1.add(labelVelocidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 210, 30));
+        labelVelocidad.setText("VELOCIDAD");
+        jPanel1.add(labelVelocidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 310, 30));
 
         interiorCarro.setBackground(new java.awt.Color(0, 0, 0));
         interiorCarro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/simulation/interior.png"))); // NOI18N
@@ -105,32 +122,99 @@ public class SimuladorUI extends javax.swing.JFrame {
         pistaImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/simulation/track_image/yasmarina.jpg"))); // NOI18N
         jPanel1.add(pistaImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 890, 490));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/1820663.png"))); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 240, -1, -1));
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/2422850.png"))); // NOI18N
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 90, -1, -1));
-
         jLabel9.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("MOTOR");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 410, -1, -1));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 270, -1, -1));
 
-        jLabel10.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("TIPO");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 80, -1, -1));
+        jLabel11.setFont(new java.awt.Font("Dialog", 3, 12)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel11.setText("VELOCIDAD SOPORTADA");
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 180, -1, -1));
 
-        jLabel11.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("LLANTAS");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 220, -1, -1));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/2422850.png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(jLabel3)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(jLabel3)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 120, -1, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/1820663.png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(jLabel2)
+                .addGap(0, 2, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(jLabel2)
+                .addGap(0, 2, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 310, 130, 130));
+
+        jLabel12.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setText("LLANTAS");
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 70, -1, -1));
+
+        jLabel13.setFont(new java.awt.Font("Dialog", 3, 12)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel13.setText("NOMBRE");
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 120, -1, -1));
+
+        jLabel14.setFont(new java.awt.Font("Dialog", 3, 12)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel14.setText("NOMBRE");
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 320, -1, -1));
+
+        jLabel15.setFont(new java.awt.Font("Dialog", 3, 12)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel15.setText("VELOCIDAD MAXIMA");
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 380, -1, -1));
+
+        nombreLlantasLabel.setFont(new java.awt.Font("Dialog", 3, 12)); // NOI18N
+        nombreLlantasLabel.setForeground(new java.awt.Color(255, 255, 255));
+        nombreLlantasLabel.setText("NOMBRE");
+        jPanel1.add(nombreLlantasLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 150, -1, -1));
+
+        velLlantasLabel.setFont(new java.awt.Font("Dialog", 3, 12)); // NOI18N
+        velLlantasLabel.setForeground(new java.awt.Color(255, 255, 255));
+        velLlantasLabel.setText("VELOCIDAD SOPORTADA");
+        jPanel1.add(velLlantasLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 210, -1, -1));
+
+        nombreMotorLabel.setFont(new java.awt.Font("Dialog", 3, 12)); // NOI18N
+        nombreMotorLabel.setForeground(new java.awt.Color(255, 255, 255));
+        nombreMotorLabel.setText("NOMBRE");
+        jPanel1.add(nombreMotorLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 350, -1, -1));
+
+        velMotorLabel.setFont(new java.awt.Font("Dialog", 3, 12)); // NOI18N
+        velMotorLabel.setForeground(new java.awt.Color(255, 255, 255));
+        velMotorLabel.setText("VELOCIDAD MAXIMA");
+        jPanel1.add(velMotorLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 410, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1184, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1184, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -195,6 +279,22 @@ public class SimuladorUI extends javax.swing.JFrame {
     public JLabel getLabelVelocidad() {
         return labelVelocidad;
     }
+
+    public JLabel getNombreLlantasLabel() {
+        return nombreLlantasLabel;
+    }
+
+    public JLabel getNombreMotorLabel() {
+        return nombreMotorLabel;
+    }
+
+    public JLabel getVelLlantasLabel() {
+        return velLlantasLabel;
+    }
+
+    public JLabel getVelMotorLabel() {
+        return velMotorLabel;
+    }
     
     public void createForm(){
         this.setLocationRelativeTo(null);
@@ -211,14 +311,24 @@ public class SimuladorUI extends javax.swing.JFrame {
     private javax.swing.JLabel frenarBruscamenteButton;
     private javax.swing.JLabel frenarButton;
     private javax.swing.JLabel interiorCarro;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel labelVelocidad;
+    private javax.swing.JLabel nombreLlantasLabel;
+    private javax.swing.JLabel nombreMotorLabel;
     private javax.swing.JLabel pistaImagen;
+    private javax.swing.JLabel velLlantasLabel;
+    private javax.swing.JLabel velMotorLabel;
+    private javax.swing.JLabel velocidad;
     // End of variables declaration//GEN-END:variables
 }

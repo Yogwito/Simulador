@@ -58,6 +58,10 @@ public class SimuladorController {
         this.createDashBoardMenu();
     }
 
+    private boolean isVehiculoEstrellado() {
+        return this.carreraSimulacion.getVehiculo().estaAccidentado();
+    }
+
     private void createDashBoardMenu() {
         this.dashBoardMenu = new DashBoardForm();
         this.dashBoardMenu.addCrearConfigButtonListener(new PanelListener());
@@ -109,11 +113,23 @@ public class SimuladorController {
         timer.start();
     }
 
+    private void handleAccidente() {
+        JOptionPane.showMessageDialog(null,
+                "TE HAS ACCIDENTADO!!!", "SIMULACION CANCELADA", JOptionPane.ERROR_MESSAGE);
+        this.simulador.dispose();
+        this.createInfoConfigMenu();
+    }
+
     private void handleEncendido() {
+        if (isVehiculoEstrellado()) {
+            handleAccidente();
+        }
         try {
             this.carreraSimulacion.getVehiculo().encender();
-            System.out.println("XD");
+            this.simulador.getLabelVelocidad()
+                    .setText("VEHICULO ENCENDIDO, ACELERE!");
             this.paqueteSonidos.encender();
+
         } catch (VehiculoYaEncendidoException e) {
             this.handleError(e.getMessage());
         } catch (VehiculoAccidentadoException e1) {
@@ -122,16 +138,21 @@ public class SimuladorController {
 
         }
     }
-    private void handleApagado(){
-        try{
+
+    private void handleApagado() {
+        if (isVehiculoEstrellado()) {
+            handleAccidente();
+        }
+        try {
             this.carreraSimulacion.getVehiculo().apagar();
-            
-        }catch(VehiculoYaApagadoException e1){
+            this.simulador.getLabelVelocidad().setText("VEHICULO APAGADO!");
+        } catch (VehiculoYaApagadoException e1) {
             this.handleError(e1.getMessage());
-        }catch(ApagarVehiculoAltaVelocidadException e2){
+        } catch (ApagarVehiculoAltaVelocidadException e2) {
             this.handleError(e2.getMessage());
         }
     }
+
     private void handleCambioLlanta(TipoLlantas llanta) {
         this.config.getNombreLlantaLabel().setText(llanta.getNombre());
         this.config.getVelocidadLlantaLabel().setText(llanta.getLimiteVelocidad() + "KM/H");
@@ -167,39 +188,61 @@ public class SimuladorController {
 
     private void handleCambioSlider(JSlider slider, JLabel label) {
         int value = slider.getValue();
-        label.setText(value + "M/S^2");
+        label.setText(value + "KM/H");
 
     }
 
     private void handleAceleracion() {
-        try{
+        if (isVehiculoEstrellado()) {
+            handleAccidente();
+        }
+        try {
             this.carreraSimulacion.getVehiculo().acelerar(
                     this.carreraSimulacion.getSensibilidadAceleracion());
             this.simulador.getLabelVelocidad().setText(
                     this.carreraSimulacion.getVehiculo().getVelocidad() + "KM/H");
-        }catch(VehiculoApagadoNoPuedeAcelerarNiFrenarException e){
+        } catch (VehiculoApagadoNoPuedeAcelerarNiFrenarException e) {
             this.handleError(e.getMessage());
-        }catch(AceleracionExcesivaMotorException e1){
+        } catch (AceleracionExcesivaMotorException e1) {
             this.handleError(e1.getMessage());
         }
     }
-    private void handleFrenado(){
-        try{
+
+    private void handleFrenado() {
+        if (isVehiculoEstrellado()) {
+            handleAccidente();
+        }
+        try {
             this.carreraSimulacion.getVehiculo().frenar(
                     this.carreraSimulacion.getSensibilidadFrenado());
             this.simulador.getLabelVelocidad().setText(
                     this.carreraSimulacion
                             .getVehiculo().getVelocidad() + "KM/H");
-        }catch(FrenadoMayorAVelocidadActualException e){
+        } catch (FrenadoMayorAVelocidadActualException e) {
             this.handleError(e.getMessage());
-        }catch(VehiculoApagadoNoPuedeAcelerarNiFrenarException e1){
+        } catch (VehiculoApagadoNoPuedeAcelerarNiFrenarException e1) {
             this.handleError(e1.getMessage());
-        }catch(VehiculoDetenidoNoPuedeFrenarException e2){
+        } catch (VehiculoDetenidoNoPuedeFrenarException e2) {
             this.handleError(e2.getMessage());
-        }catch(FrenadoBruscoExcesoVelocidadLlantasException e3){
+        } catch (FrenadoBruscoExcesoVelocidadLlantasException e3) {
             this.handleError(e3.getMessage());
         }
     }
+
+    private void handleFrenadoBrusco() {
+        if (isVehiculoEstrellado()) {
+            handleAccidente();
+        }
+        try {
+            this.carreraSimulacion.getVehiculo().frenarBruscamente(
+                    this.carreraSimulacion.getSensibilidadFrenadoBrusco());
+            this.simulador.getLabelVelocidad().setText(
+                    this.carreraSimulacion.getVehiculo().getVelocidad() + "KM/H");
+        } catch (Exception e) {
+            this.handleError(e.getMessage());
+        }
+    }
+
     private void iniciarSimulacion() {
         this.carreraSimulacion.setSensibilidadAceleracion(
                 this.infoConfig.getAceleracionSlider().getValue());
@@ -213,6 +256,16 @@ public class SimuladorController {
         this.simulador.addApagarButtonListener(new ButtonListener());
         this.simulador.addAcelerarButtonListener(new ButtonListener());
         this.simulador.addFrenarButtonListener(new ButtonListener());
+        this.simulador.addFrenarBruscamenteButtonListener(new ButtonListener());
+        this.simulador.getLabelVelocidad().setText("VEHICULO APAGADO");
+        this.simulador.getVelLlantasLabel().setText(this.carreraSimulacion.getVehiculo()
+                .getLlantas().getTipo().getLimiteVelocidad() + "KM/H");
+        this.simulador.getVelMotorLabel().setText(this.carreraSimulacion.getVehiculo()
+                .getMotor().getTipo().getVelocidadMaxima() + "KM/H");
+        this.simulador.getNombreLlantasLabel().setText(
+                this.carreraSimulacion.getVehiculo().getLlantas().getTipo().getNombre());
+        this.simulador.getNombreMotorLabel().setText(
+                this.carreraSimulacion.getVehiculo().getMotor().getTipo().getNombre());
         this.simulador.getPistaImagen().setIcon(new javax.swing.ImageIcon(
                 getClass().getResource(this.carreraSimulacion.getPista()
                         .getTrackImgPath())));
@@ -220,25 +273,25 @@ public class SimuladorController {
     }
 
     private class ButtonListener extends MouseAdapter {
+
         @Override
         public void mouseClicked(MouseEvent e) {
             JLabel src = (JLabel) e.getSource();
             if (src == simulador.getEncenderButton()) {
-                System.out.println("XD");
                 handleEncendido();
             }
-            if(src == simulador.getApagarButton()){
+            if (src == simulador.getApagarButton()) {
                 handleApagado();
             }
-            if(src == simulador.getAcelerarButton()){
+            if (src == simulador.getAcelerarButton()) {
                 handleAceleracion();
             }
-            if(src == simulador.getFrenarButton()){
+            if (src == simulador.getFrenarButton()) {
                 handleFrenado();
             }
-            
-            if(src == simulador.getFrenarBruscamenteButton()){
-                //handleFrenadoBrusco();
+
+            if (src == simulador.getFrenarBruscamenteButton()) {
+                handleFrenadoBrusco();
             }
         }
     }

@@ -20,6 +20,12 @@ public class InfoConfiguracion extends javax.swing.JFrame {
      */
     public InfoConfiguracion() {
         initComponents();
+        this.sensibilidadAceleracionLabel.setText(
+                this.aceleracionSlider.getValue() + "KM/H");
+        this.sensibilidadFrenadoLabel.setText(
+                this.frenadoSlider.getValue() + "KM/H");
+        this.sensibilidadFrenadoBruscoLabel.setText(
+                this.frenadoBruscoSlider.getValue() + "KM/H");
     }
 
     public InfoConfiguracion(Carrera carrera) {
@@ -33,12 +39,19 @@ public class InfoConfiguracion extends javax.swing.JFrame {
                 carrera.getVehiculo().getMotor().getVelocidadMaxima() + "KM/H");
         this.velSoportadaLabel.setText(
                 carrera.getVehiculo().getLlantas().getLimiteVelocidad() + "KM/H");
+        this.sensibilidadAceleracionLabel.setText(
+                this.aceleracionSlider.getValue() + "KM/H");
+        this.sensibilidadFrenadoLabel.setText(
+                this.frenadoSlider.getValue() + "KM/H");
+        this.sensibilidadFrenadoBruscoLabel.setText(
+                this.frenadoBruscoSlider.getValue() + "KM/H");
     }
 
     public JPanel getSimularButton() {
         return simularButton;
     }
-    public void addSimularButtonListener(java.awt.event.MouseListener l){
+
+    public void addSimularButtonListener(java.awt.event.MouseListener l) {
         this.simularButton.addMouseListener(l);
     }
 
@@ -57,23 +70,29 @@ public class InfoConfiguracion extends javax.swing.JFrame {
     public JSlider getAceleracionSlider() {
         return aceleracionSlider;
     }
+
     public void addAceleracionSliderListener(
-            javax.swing.event.ChangeListener l){
+            javax.swing.event.ChangeListener l) {
         this.aceleracionSlider.addChangeListener(l);
     }
+
     public JSlider getFrenadoBruscoSlider() {
         return frenadoBruscoSlider;
     }
+
     public void addFrenadoBruscoSliderListener(
-            javax.swing.event.ChangeListener l){
+            javax.swing.event.ChangeListener l) {
         this.frenadoBruscoSlider.addChangeListener(l);
     }
+
     public JSlider getFrenadoSlider() {
         return frenadoSlider;
     }
-    public void addFrenadoSliderListener(javax.swing.event.ChangeListener l){
+
+    public void addFrenadoSliderListener(javax.swing.event.ChangeListener l) {
         this.frenadoSlider.addChangeListener(l);
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -132,8 +151,9 @@ public class InfoConfiguracion extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("ROG Fonts", 0, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("COMENZAR SIMULACION");
-        simularButton.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, -1, -1));
+        simularButton.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(3, 10, 400, -1));
 
         jPanel4.setBackground(new java.awt.Color(0, 0, 0,185));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -177,12 +197,12 @@ public class InfoConfiguracion extends javax.swing.JFrame {
 
         jLabel24.setFont(new java.awt.Font("ROG Fonts", 0, 12)); // NOI18N
         jLabel24.setForeground(new java.awt.Color(153, 0, 0));
-        jLabel24.setText("velocidad nominal");
+        jLabel24.setText("VELOCIDAD NOMINAL");
         jPanel4.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 60, -1, -1));
 
         jLabel25.setFont(new java.awt.Font("ROG Fonts", 0, 12)); // NOI18N
         jLabel25.setForeground(new java.awt.Color(153, 0, 0));
-        jLabel25.setText("circuito");
+        jLabel25.setText("CIRCUITO");
         jPanel4.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 60, -1, -1));
 
         velocidadNominaLabel.setFont(new java.awt.Font("ROG Fonts", 1, 12)); // NOI18N
@@ -228,7 +248,7 @@ public class InfoConfiguracion extends javax.swing.JFrame {
 
         jLabel26.setFont(new java.awt.Font("ROG Fonts", 0, 12)); // NOI18N
         jLabel26.setForeground(new java.awt.Color(153, 0, 0));
-        jLabel26.setText("sENSIBILIDAD DE ACELERACION");
+        jLabel26.setText("SENSIBILIDAD DE ACELERACION");
         jPanel4.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, -1, -1));
 
         jPanel6.setBackground(new java.awt.Color(51, 51, 51));
@@ -306,12 +326,12 @@ public class InfoConfiguracion extends javax.swing.JFrame {
 
         jLabel28.setFont(new java.awt.Font("ROG Fonts", 0, 12)); // NOI18N
         jLabel28.setForeground(new java.awt.Color(153, 0, 0));
-        jLabel28.setText("VELOCIDAD MAXIMA soportada");
+        jLabel28.setText("VELOCIDAD MAXIMA SOPORTADA");
         jPanel4.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 130, -1, -1));
 
         jLabel21.setFont(new java.awt.Font("ROG Fonts", 0, 12)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(153, 0, 0));
-        jLabel21.setText("longitud");
+        jLabel21.setText("LONGITUD");
         jPanel4.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 130, -1, -1));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -330,7 +350,7 @@ public class InfoConfiguracion extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 180, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 184, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel2)

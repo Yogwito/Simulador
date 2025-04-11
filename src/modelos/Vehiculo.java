@@ -113,12 +113,12 @@ public class Vehiculo {
         }
     }
 
-    public void frenarBruscamente() throws VehiculoApagadoNoPuedeAcelerarNiFrenarException, 
+    public void frenarBruscamente(int decremento) throws VehiculoApagadoNoPuedeAcelerarNiFrenarException, 
                                          VehiculoDetenidoNoPuedeFrenarException, 
                                          FrenadoMayorAVelocidadActualException,
                                          FrenadoBruscoExcesoVelocidadLlantasException {
         System.out.println("Intentando frenar bruscamente...");
-        frenar(31); // cualquier valor mayor a 30 para considerar frenado brusco
+        frenar(decremento); // cualquier valor mayor a 30 para considerar frenado brusco
     }
 
     public int getVelocidad() {
