@@ -3,7 +3,23 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/juanp/Documents/NetBeansProyects/Simulador/src/test/TestSonido.java</file>
+            <file>file:/C:/Users/juanp/Documents/NetBeansProyects/Simulador/src/modelos/Enum/TipoMotor.java</file>
+            <file>file:/C:/Users/juanp/Documents/NetBeansProyects/Simulador/src/modelos/Vehiculo.java</file>
+            <file>file:/C:/Users/juanp/Documents/NetBeansProyects/Simulador/src/modelos/Enum/Pistas.java</file>
+            <file>file:/C:/Users/juanp/Documents/NetBeansProyects/Simulador/src/services/sounds/PorscheSoundService.java</file>
+            <file>file:/C:/Users/juanp/Documents/NetBeansProyects/Simulador/src/data/datarepository/DataRepository.java</file>
+            <file>file:/C:/Users/juanp/Documents/NetBeansProyects/Simulador/src/data/datarepository/FileDataRepository.java</file>
+            <file>file:/C:/Users/juanp/Documents/NetBeansProyects/Simulador/src/services/SimuladorController.java</file>
+            <file>file:/C:/Users/juanp/Documents/NetBeansProyects/Simulador/src/services/sounds/SoundService.java</file>
+            <file>file:/C:/Users/juanp/Documents/NetBeansProyects/Simulador/src/modelos/Motor.java</file>
+            <file>file:/C:/Users/juanp/Documents/NetBeansProyects/Simulador/src/ui/InfoConfiguracion.java</file>
             <file>file:/C:/Users/juanp/Documents/NetBeansProyects/Simulador/src/ui/DashBoardForm.java</file>
+            <file>file:/C:/Users/juanp/Documents/NetBeansProyects/Simulador/src/modelos/Llantas.java</file>
+            <file>file:/C:/Users/juanp/Documents/NetBeansProyects/Simulador/src/modelos/Enum/TipoLlantas.java</file>
+            <file>file:/C:/Users/juanp/Documents/NetBeansProyects/Simulador/src/ui/SimuladorUI.java</file>
+            <file>file:/C:/Users/juanp/Documents/NetBeansProyects/Simulador/src/modelos/Carrera.java</file>
+            <file>file:/C:/Users/juanp/Documents/NetBeansProyects/Simulador/src/ui/PersonalizacionVehiculoForm.java</file>
         </group>
     </open-files>
 </project-private>

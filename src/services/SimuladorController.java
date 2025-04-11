@@ -6,7 +6,12 @@ package services;
 
 import data.datarepository.DataRepository;
 import excepciones.excepcionesArchivo.ConfiguracionExistenteException;
+import excepciones.excepcionesVehiculo.AceleracionExcesivaMotorException;
+import excepciones.excepcionesVehiculo.FrenadoBruscoExcesoVelocidadLlantasException;
+import excepciones.excepcionesVehiculo.FrenadoMayorAVelocidadActualException;
 import excepciones.excepcionesVehiculo.VehiculoAccidentadoException;
+import excepciones.excepcionesVehiculo.VehiculoApagadoNoPuedeAcelerarNiFrenarException;
+import excepciones.excepcionesVehiculo.VehiculoDetenidoNoPuedeFrenarException;
 import excepciones.excepcionesVehiculo.VehiculoYaEncendidoException;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
@@ -155,10 +160,47 @@ public class SimuladorController {
 
     }
 
+    private void handleAceleracion() {
+        try{
+            this.carreraSimulacion.getVehiculo().acelerar(
+                    this.carreraSimulacion.getSensibilidadAceleracion());
+            this.simulador.getLabelVelocidad().setText(
+                    this.carreraSimulacion.getVehiculo().getVelocidad() + "KM/H");
+        }catch(VehiculoApagadoNoPuedeAcelerarNiFrenarException e){
+            this.handleError(e.getMessage());
+        }catch(AceleracionExcesivaMotorException e1){
+            this.handleError(e1.getMessage());
+        }
+    }
+    private void handleFrenado(){
+        try{
+            this.carreraSimulacion.getVehiculo().frenar(
+                    this.carreraSimulacion.getSensibilidadFrenado());
+            this.simulador.getLabelVelocidad().setText(
+                    this.carreraSimulacion
+                            .getVehiculo().getVelocidad() + "KM/H");
+        }catch(FrenadoMayorAVelocidadActualException e){
+            this.handleError(e.getMessage());
+        }catch(VehiculoApagadoNoPuedeAcelerarNiFrenarException e1){
+            this.handleError(e1.getMessage());
+        }catch(VehiculoDetenidoNoPuedeFrenarException e2){
+            this.handleError(e2.getMessage());
+        }catch(FrenadoBruscoExcesoVelocidadLlantasException e3){
+            this.handleError(e3.getMessage());
+        }
+    }
     private void iniciarSimulacion() {
+        this.carreraSimulacion.setSensibilidadAceleracion(
+                this.infoConfig.getAceleracionSlider().getValue());
+        this.carreraSimulacion.setSensibilidadFrenado(
+                this.infoConfig.getFrenadoSlider().getValue());
+        this.carreraSimulacion.setSensibilidadFrenadoBrusco(
+                this.infoConfig.getFrenadoBruscoSlider().getValue());
         this.paqueteSonidos = new PorscheSoundService();
         this.simulador = new SimuladorUI();
         this.simulador.addEncenderButtonListener(new ButtonListener());
+        this.simulador.addAcelerarButtonListener(new ButtonListener());
+        this.simulador.addFrenarButtonListener(new ButtonListener());
         this.simulador.getPistaImagen().setIcon(new javax.swing.ImageIcon(
                 getClass().getResource(this.carreraSimulacion.getPista()
                         .getTrackImgPath())));
@@ -166,7 +208,6 @@ public class SimuladorController {
     }
 
     private class ButtonListener extends MouseAdapter {
-
         @Override
         public void mouseClicked(MouseEvent e) {
             JLabel src = (JLabel) e.getSource();
@@ -174,7 +215,16 @@ public class SimuladorController {
                 System.out.println("XD");
                 handleEncendido();
             }
-
+            if(src == simulador.getAcelerarButton()){
+                handleAceleracion();
+            }
+            if(src == simulador.getFrenarButton()){
+                handleFrenado();
+            }
+            
+            if(src == simulador.getFrenarBruscamenteButton()){
+                //handleFrenadoBrusco();
+            }
         }
     }
 

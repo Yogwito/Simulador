@@ -1,4 +1,2 @@
 llantas,motor,pista
-Michelin Pilot Sport 4S,Honda K20 2.0L I4,Circuit de Monaco,
-Michelin Pilot Sport 4S,Honda K20 2.0L I4,Silverstone Circuit,
-Michelin Pilot Sport 4S,Ferrari F136 4.3L V8,Autodromo Nazionale Monza,
+Michelin Pilot Sport 4S,Honda K20 2.0L I4,Baku City Circuit,

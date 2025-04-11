@@ -14,7 +14,8 @@ import javax.sound.sampled.Clip;
  * @author Trujirendjj
  */
 public class PorscheSoundService implements SoundService{
-    public static final String ENCENDIDO_ROUTE = "src/assets/sounds/porscheSounds/encendido.wav";
+    private static final String ENCENDIDO_ROUTE = "src/assets/sounds/porscheSounds/encendido.wav";
+    
     @Override
     public void encender() {
         File sonido = new File(ENCENDIDO_ROUTE);

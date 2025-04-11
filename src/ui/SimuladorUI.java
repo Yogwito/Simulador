@@ -39,6 +39,7 @@ public class SimuladorUI extends javax.swing.JFrame {
         errorPanel = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         errorText = new javax.swing.JLabel();
+        labelVelocidad = new javax.swing.JLabel();
         interiorCarro = new javax.swing.JLabel();
         pistaImagen = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -55,17 +56,17 @@ public class SimuladorUI extends javax.swing.JFrame {
         frenarButton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         frenarButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/1593815.png"))); // NOI18N
         frenarButton.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jPanel1.add(frenarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 370, 110, -1));
+        jPanel1.add(frenarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 370, 110, -1));
 
         frenarBruscamenteButton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         frenarBruscamenteButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/3410140.png"))); // NOI18N
         frenarBruscamenteButton.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jPanel1.add(frenarBruscamenteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 230, 110, 100));
+        jPanel1.add(frenarBruscamenteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 190, 110, 100));
 
         acelerarButton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         acelerarButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/16013421.png"))); // NOI18N
         acelerarButton.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jPanel1.add(acelerarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 310, 110, 140));
+        jPanel1.add(acelerarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 330, 110, 140));
 
         encenderButton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         encenderButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/4943215.png"))); // NOI18N
@@ -83,12 +84,19 @@ public class SimuladorUI extends javax.swing.JFrame {
         errorPanel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 0, 50, 50));
 
         errorText.setBackground(new java.awt.Color(255, 0, 0));
-        errorText.setFont(new java.awt.Font("ROG Fonts", 0, 14)); // NOI18N
+        errorText.setFont(new java.awt.Font("ROG Fonts", 0, 10)); // NOI18N
         errorText.setForeground(new java.awt.Color(255, 0, 0));
+        errorText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         errorText.setText("jLabel5");
-        errorPanel.add(errorText, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 450, 30));
+        errorPanel.add(errorText, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 640, 30));
 
-        jPanel1.add(errorPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 30, 510, 50));
+        jPanel1.add(errorPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, 700, 50));
+
+        labelVelocidad.setBackground(new java.awt.Color(255, 0, 0));
+        labelVelocidad.setFont(new java.awt.Font("ROG Fonts", 0, 14)); // NOI18N
+        labelVelocidad.setForeground(new java.awt.Color(0, 0, 255));
+        labelVelocidad.setText("velocidad:");
+        jPanel1.add(labelVelocidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 210, 30));
 
         interiorCarro.setBackground(new java.awt.Color(0, 0, 0));
         interiorCarro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/simulation/interior.png"))); // NOI18N
@@ -183,6 +191,10 @@ public class SimuladorUI extends javax.swing.JFrame {
     public void addFrenarButtonListener(java.awt.event.MouseListener l) {
         this.frenarButton.addMouseListener(l);
     }
+
+    public JLabel getLabelVelocidad() {
+        return labelVelocidad;
+    }
     
     public void createForm(){
         this.setLocationRelativeTo(null);
@@ -206,6 +218,7 @@ public class SimuladorUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel labelVelocidad;
     private javax.swing.JLabel pistaImagen;
     // End of variables declaration//GEN-END:variables
 }
