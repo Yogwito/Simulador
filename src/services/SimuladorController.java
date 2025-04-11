@@ -7,11 +7,13 @@ package services;
 import data.datarepository.DataRepository;
 import excepciones.excepcionesArchivo.ConfiguracionExistenteException;
 import excepciones.excepcionesVehiculo.AceleracionExcesivaMotorException;
+import excepciones.excepcionesVehiculo.ApagarVehiculoAltaVelocidadException;
 import excepciones.excepcionesVehiculo.FrenadoBruscoExcesoVelocidadLlantasException;
 import excepciones.excepcionesVehiculo.FrenadoMayorAVelocidadActualException;
 import excepciones.excepcionesVehiculo.VehiculoAccidentadoException;
 import excepciones.excepcionesVehiculo.VehiculoApagadoNoPuedeAcelerarNiFrenarException;
 import excepciones.excepcionesVehiculo.VehiculoDetenidoNoPuedeFrenarException;
+import excepciones.excepcionesVehiculo.VehiculoYaApagadoException;
 import excepciones.excepcionesVehiculo.VehiculoYaEncendidoException;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
@@ -120,7 +122,16 @@ public class SimuladorController {
 
         }
     }
-
+    private void handleApagado(){
+        try{
+            this.carreraSimulacion.getVehiculo().apagar();
+            
+        }catch(VehiculoYaApagadoException e1){
+            this.handleError(e1.getMessage());
+        }catch(ApagarVehiculoAltaVelocidadException e2){
+            this.handleError(e2.getMessage());
+        }
+    }
     private void handleCambioLlanta(TipoLlantas llanta) {
         this.config.getNombreLlantaLabel().setText(llanta.getNombre());
         this.config.getVelocidadLlantaLabel().setText(llanta.getLimiteVelocidad() + "KM/H");
@@ -199,6 +210,7 @@ public class SimuladorController {
         this.paqueteSonidos = new PorscheSoundService();
         this.simulador = new SimuladorUI();
         this.simulador.addEncenderButtonListener(new ButtonListener());
+        this.simulador.addApagarButtonListener(new ButtonListener());
         this.simulador.addAcelerarButtonListener(new ButtonListener());
         this.simulador.addFrenarButtonListener(new ButtonListener());
         this.simulador.getPistaImagen().setIcon(new javax.swing.ImageIcon(
@@ -214,6 +226,9 @@ public class SimuladorController {
             if (src == simulador.getEncenderButton()) {
                 System.out.println("XD");
                 handleEncendido();
+            }
+            if(src == simulador.getApagarButton()){
+                handleApagado();
             }
             if(src == simulador.getAcelerarButton()){
                 handleAceleracion();
