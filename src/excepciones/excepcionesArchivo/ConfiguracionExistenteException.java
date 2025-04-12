@@ -12,4 +12,7 @@ public class ConfiguracionExistenteException extends Exception{
     public ConfiguracionExistenteException(){
         super("ARCHIVO DE CONFIGURACION YA EXISTE");
     }
+    public ConfiguracionExistenteException(String msg){
+        super(msg);
+    }
 }

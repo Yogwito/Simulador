@@ -17,6 +17,6 @@ import modelos.Enum.TipoMotor;
 public interface DataRepository {
     public void saveConfig(TipoLlantas llanta, TipoMotor motor, Pistas pista) 
             throws ConfiguracionExistenteException;
-    public void modifyConfig();
+    public void modifyConfig(TipoLlantas llanta, TipoMotor motor, Pistas pista);
     public Carrera readConfig();
 }

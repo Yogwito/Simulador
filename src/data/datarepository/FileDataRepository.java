@@ -63,7 +63,10 @@ public class FileDataRepository implements DataRepository{
     public void saveConfig(TipoLlantas llanta, TipoMotor motor, Pistas pista) 
             throws ConfiguracionExistenteException{
         File archivoConfiguracion = new File(FILE_NAME);
-        if(!archivoConfiguracion.exists()){
+        if(archivoConfiguracion.exists()){
+            throw new ConfiguracionExistenteException(
+                    "ARCHIVO CONFIGURACION EXISTENTE, ¡DESEA MODIFICARLO?");
+        }else{
             crearArchivo(archivoConfiguracion);
         }
         try{
@@ -80,8 +83,20 @@ public class FileDataRepository implements DataRepository{
     }
 
     @Override
-    public void modifyConfig() {
-        
+    public void modifyConfig(TipoLlantas llanta, TipoMotor motor, Pistas pista) {
+        File archivoConfiguracion = new File(FILE_NAME);
+        try{
+            StringBuilder sb = new StringBuilder();
+            PrintWriter out = new PrintWriter(new FileWriter(archivoConfiguracion,false));
+            sb.append(llanta).append(",");
+            sb.append(motor).append(",");
+            sb.append(pista).append(",");
+            out.println(HEADER);
+            out.println(sb.toString());
+            out.close();
+        }catch(IOException e){
+            System.out.println(e.getMessage());
+        }
     }
 
     @Override

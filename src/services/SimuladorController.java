@@ -66,7 +66,6 @@ public class SimuladorController {
         this.dashBoardMenu = new DashBoardForm();
         this.dashBoardMenu.addCrearConfigButtonListener(new PanelListener());
         this.dashBoardMenu.addSeleccionarConfigButtonListener(new PanelListener());
-        this.dashBoardMenu.addModificarConfigButtonListener(new PanelListener());
         this.dashBoardMenu.createForm();
     }
 
@@ -100,12 +99,12 @@ public class SimuladorController {
 
             @Override
             public void actionPerformed(ActionEvent evt) {
-                errorPanel.setVisible(!errorPanel.isVisible()); // Parpadea
+                errorPanel.setVisible(!errorPanel.isVisible()); 
 
                 contador++;
-                if (contador >= 5) { // Después de 5 parpadeos (1 segundo total)
+                if (contador >= 5) { 
                     ((Timer) evt.getSource()).stop();
-                    errorPanel.setVisible(false); // Lo ocultamos al final
+                    errorPanel.setVisible(false); 
                 }
             }
         });
@@ -179,8 +178,20 @@ public class SimuladorController {
             this.repositorio.saveConfig(llanta, motor, pista);
             System.out.println("CONFIGURACION CREADA EXITOSAMENTE");
         } catch (ConfiguracionExistenteException e) {
-            JOptionPane.showMessageDialog(null,
-                    e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            String[] opciones = {"Aceptar", "Cancelar"};
+            int seleccion = JOptionPane.showOptionDialog(
+                    null,
+                    e.getMessage(),
+                    "Confirmación",
+                    JOptionPane.YES_NO_OPTION,
+                    JOptionPane.QUESTION_MESSAGE,
+                    null,
+                    opciones,
+                    opciones[0]
+            );
+            if(seleccion == 0){
+                this.repositorio.modifyConfig(llanta, motor, pista);
+            }
         } finally {
             this.config.dispose();
         }
@@ -238,7 +249,7 @@ public class SimuladorController {
         try {
             this.carreraSimulacion.getVehiculo().frenarBruscamente(
                     this.carreraSimulacion.getSensibilidadFrenadoBrusco());
-            
+
             this.simulador.getLabelVelocidad().setText(
                     this.carreraSimulacion.getVehiculo().getVelocidad() + "KM/H");
             this.paqueteSonidos.frenarBruscamente();

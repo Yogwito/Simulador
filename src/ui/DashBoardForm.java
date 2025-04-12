@@ -33,8 +33,6 @@ public class DashBoardForm extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         seleccionarConfigButton = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        modificarConfigButton = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
         crearConfigButton = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -58,17 +56,7 @@ public class DashBoardForm extends javax.swing.JFrame {
         jLabel3.setText("SELECCIONAR CONFIGURACION");
         seleccionarConfigButton.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, -1, -1));
 
-        jPanel3.add(seleccionarConfigButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, 400, 40));
-
-        modificarConfigButton.setBackground(new java.awt.Color(0, 0, 0));
-        modificarConfigButton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel5.setFont(new java.awt.Font("ROG Fonts", 0, 12)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("MODIFICAR CONFIGURACION");
-        modificarConfigButton.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, -1, -1));
-
-        jPanel3.add(modificarConfigButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 400, 40));
+        jPanel3.add(seleccionarConfigButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 400, 40));
 
         crearConfigButton.setBackground(new java.awt.Color(0, 0, 0));
         crearConfigButton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -131,9 +119,6 @@ public class DashBoardForm extends javax.swing.JFrame {
         return crearConfigButton;
     }
 
-    public JPanel getModificarConfigButton() {
-        return modificarConfigButton;
-    }
 
     public JPanel getSeleccionarConfigButton() {
         return seleccionarConfigButton;
@@ -143,9 +128,6 @@ public class DashBoardForm extends javax.swing.JFrame {
         this.crearConfigButton.addMouseListener(l);
     }
 
-    public void addModificarConfigButtonListener(java.awt.event.MouseListener l) {
-        this.modificarConfigButton.addMouseListener(l);
-    }
 
     public void addSeleccionarConfigButtonListener(java.awt.event.MouseListener l) {
         this.seleccionarConfigButton.addMouseListener(l);
@@ -162,12 +144,10 @@ public class DashBoardForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel modificarConfigButton;
     private javax.swing.JPanel seleccionarConfigButton;
     // End of variables declaration//GEN-END:variables
 }
