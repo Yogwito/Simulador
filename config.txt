@@ -1,2 +1,2 @@
 llantas,motor,pista
-Hankook Ventus V12 Evo2,Chevrolet LT4 6.2L Supercharged V8,Red Bull Ring,
+Michelin Pilot Sport 4S,Honda K20 2.0L I4,Sepang International Circuit,
