@@ -107,13 +107,13 @@ public class SimuladorUI extends javax.swing.JFrame {
         velocidad.setFont(new java.awt.Font("ROG Fonts", 0, 14)); // NOI18N
         velocidad.setForeground(new java.awt.Color(0, 0, 255));
         velocidad.setText("VELOCIDAD:");
-        jPanel1.add(velocidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 90, 30));
+        jPanel1.add(velocidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 110, 30));
 
         labelVelocidad.setBackground(new java.awt.Color(255, 0, 0));
         labelVelocidad.setFont(new java.awt.Font("ROG Fonts", 0, 14)); // NOI18N
         labelVelocidad.setForeground(new java.awt.Color(0, 0, 255));
         labelVelocidad.setText("VELOCIDAD");
-        jPanel1.add(labelVelocidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 310, 30));
+        jPanel1.add(labelVelocidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, 310, 30));
 
         interiorCarro.setBackground(new java.awt.Color(0, 0, 0));
         interiorCarro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/simulation/interior.png"))); // NOI18N

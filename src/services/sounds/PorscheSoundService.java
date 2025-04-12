@@ -16,6 +16,9 @@ import javax.sound.sampled.Clip;
 public class PorscheSoundService implements SoundService {
 
     private static final String ENCENDIDO_ROUTE = "src/assets/sounds/porscheSounds/encendido.wav";
+    private static final String ACELERAR_ROUTE = "src/assets/sounds/porscheSounds/acelerar.wav";
+    private static final String FRENADO_BRUSCO_ROUTE = "src/assets/sounds/porscheSounds/frenadoBrusco.wav";
+    private static final String FRENADO_ROUTE = "src/assets/sounds/porscheSounds/frenado.wav";
 
     @Override
     public void encender() {
@@ -55,17 +58,89 @@ public class PorscheSoundService implements SoundService {
 
     @Override
     public void acelerar() {
-        
+        File sonido = new File(ACELERAR_ROUTE);
+        Thread hiloSonido = new Thread(() -> {
+            try {
+                AudioInputStream audioStream = AudioSystem.getAudioInputStream(sonido);
+                Clip clip = AudioSystem.getClip();
+                clip.open(audioStream);
+                clip.start();
+                while (!clip.isRunning()) {
+                    Thread.sleep(10);
+                }
+                while (clip.isRunning()) {
+                    Thread.sleep(10);
+                }
+                clip.close();
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+
+        });
+        hiloSonido.start();
+        try {
+            hiloSonido.join();
+        } catch (InterruptedException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     @Override
     public void frenar() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        File sonido = new File(FRENADO_ROUTE);
+        Thread hiloSonido = new Thread(() -> {
+            try {
+                AudioInputStream audioStream = AudioSystem.getAudioInputStream(sonido);
+                Clip clip = AudioSystem.getClip();
+                clip.open(audioStream);
+                clip.start();
+                while (!clip.isRunning()) {
+                    Thread.sleep(10);
+                }
+                while (clip.isRunning()) {
+                    Thread.sleep(10);
+                }
+                clip.close();
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+
+        });
+        hiloSonido.start();
+        try {
+            hiloSonido.join();
+        } catch (InterruptedException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     @Override
     public void frenarBruscamente() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        File sonido = new File(FRENADO_BRUSCO_ROUTE);
+        Thread hiloSonido = new Thread(() -> {
+            try {
+                AudioInputStream audioStream = AudioSystem.getAudioInputStream(sonido);
+                Clip clip = AudioSystem.getClip();
+                clip.open(audioStream);
+                clip.start();
+                while (!clip.isRunning()) {
+                    Thread.sleep(10);
+                }
+                while (clip.isRunning()) {
+                    Thread.sleep(10);
+                }
+                clip.close();
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+
+        });
+        hiloSonido.start();
+        try {
+            hiloSonido.join();
+        } catch (InterruptedException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
 }

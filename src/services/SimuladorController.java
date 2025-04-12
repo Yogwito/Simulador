@@ -201,6 +201,7 @@ public class SimuladorController {
                     this.carreraSimulacion.getSensibilidadAceleracion());
             this.simulador.getLabelVelocidad().setText(
                     this.carreraSimulacion.getVehiculo().getVelocidad() + "KM/H");
+            this.paqueteSonidos.acelerar();
         } catch (VehiculoApagadoNoPuedeAcelerarNiFrenarException e) {
             this.handleError(e.getMessage());
         } catch (AceleracionExcesivaMotorException e1) {
@@ -218,6 +219,7 @@ public class SimuladorController {
             this.simulador.getLabelVelocidad().setText(
                     this.carreraSimulacion
                             .getVehiculo().getVelocidad() + "KM/H");
+            this.paqueteSonidos.frenar();
         } catch (FrenadoMayorAVelocidadActualException e) {
             this.handleError(e.getMessage());
         } catch (VehiculoApagadoNoPuedeAcelerarNiFrenarException e1) {
@@ -236,8 +238,10 @@ public class SimuladorController {
         try {
             this.carreraSimulacion.getVehiculo().frenarBruscamente(
                     this.carreraSimulacion.getSensibilidadFrenadoBrusco());
+            
             this.simulador.getLabelVelocidad().setText(
                     this.carreraSimulacion.getVehiculo().getVelocidad() + "KM/H");
+            this.paqueteSonidos.frenarBruscamente();
         } catch (Exception e) {
             this.handleError(e.getMessage());
         }
